@@ -1,0 +1,17 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/download-app-zip.ts": {
+      "includeFiles": "{src/**,api/**,server.ts,package.json,bun.lock,tsconfig.json,vite.config.ts,index.html,metadata.json,.env.example,.gitignore,vercel.json}"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
